@@ -1,13 +1,12 @@
 <?php
 require 'validarcaixa.php';
 
-// Obter os valores necessários
 $somaValores = SomarValores();
 $descontoCompra = CalcularDesconto();
 $dados = ConsultarCaixa();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtém o método de pagamento selecionado do formulário
+
     $metodo_pagamento = $_POST["metodo_pagamento"];
 }
 
@@ -16,7 +15,6 @@ $tipoPagamento = $metodo_pagamento;
 $soma = $somaValores;
 $descricao = $dados;
 
-// Função para gerar a nota fiscal em HTML
 function gerarNotaFiscalHTML($localEmpresa, $tipoPagamento, $dataHora, $soma, $descricao)
 {
     $html = "<!DOCTYPE html>
@@ -101,14 +99,15 @@ function gerarNotaFiscalHTML($localEmpresa, $tipoPagamento, $dataHora, $soma, $d
                     <p><b>Tipo de Pagamento:</b> {$tipoPagamento}</p>
                     <p>Produtos:</p>";
 
-    // Loop para listar os produtos
-    foreach ($descricao as $produto) {
+    
+    foreach ($descricao as $produto){
         $html .= "<p class='Campos'>
         <span class='Cnome'>{$produto['nome']}</span> 
         <span class='Cdescricao'>{$produto['descricao']}</span>
         <span class='Cestoque'> {$produto['estoque']}x </span>
         <span class='Cvalor'> R$ {$produto['valor']} </span></p>";
     }
+   
 
     $html .= "<p>------------------------------------------------------------------------------------</p>
                 <p class='centerValor'><b>Valor Compra: R$ {$soma}</b></p>

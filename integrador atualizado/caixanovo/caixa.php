@@ -130,8 +130,8 @@ $dados = ConsultarCaixa();
                                     </div>
                                     <?php foreach ($dados as $linha) { ?>
                                         <tr>
-                                            <p class="txtinfoscaixa"><?php echo $linha["estoque"] ?></p>
-                                            <?php $ultimaQuantidade = $linha["estoque"] ?>
+                                            <p class="txtinfoscaixa"><?php echo $linha["Quantidade"] ?></p>
+                                            <?php $ultimaQuantidade = $linha["Quantidade"] ?>
 
                                         </tr>
                                     <?php } ?>
@@ -180,9 +180,9 @@ $dados = ConsultarCaixa();
                     </fieldset>
                     <fieldset class="Atalhos">
                         <legend class="legend"><b>Atalhos</b></legend>
-                        <p><b>Quantidade- SHIFT + F2</b></p>
-                        <p><b>Nova Venda- SHIFT + F1</b></p>
                         <p><b>Inserir Produto- A</b></p>
+                        <p><b>Nova Venda- SHIFT + F2</b></p>
+                        <p><b>A definir- SHIFT + ?</b></p>
                         <p><b>A definir- SHIFT + ?</b></p>
                         <p><b>A definir- SHIFT + ?</b></p>
                         <p><b>A definir- SHIFT + ?</b></p>
@@ -190,6 +190,7 @@ $dados = ConsultarCaixa();
                         <p><b>A definir- SHIFT + ?</b></p>
                         <p><b>A definir- SHIFT + ?</b></p>
                         <p><b>Fechar- ESC/Escape</b></p>
+                    
                     </fieldset>
                 </div>
             </div>
