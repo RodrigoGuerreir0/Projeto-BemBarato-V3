@@ -1,0 +1,173 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+
+    width: 50%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: blue;
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+
+.button {
+    background-color: #4CAF50;
+    /* Cor de fundo */
+    color: white;
+    /* Cor do texto */
+    padding: 10px 20px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Alinhamento do texto */
+    text-decoration: none;
+    /* Remover sublinhado */
+    display: inline-block;
+    /* Exibir como bloco */
+    border: none;
+    /* Remover borda */
+    border-radius: 5px;
+    /* Borda arredondada */
+    cursor: pointer;
+    /* Alterar cursor para ponteiro */
+    transition-duration: 0.4s;
+    /* Duração da transição */
+}
+
+.button:hover {
+    background-color: #45a049;
+    /* Cor de fundo quando hover */
+}
+
+input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+    /* Margem na parte inferior */
+    padding: 5px;
+}
+
+.alert-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+}
+
+.alert-box {
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#alerta {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.alerta {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    /* Garante que o alerta apareça sobre outros elementos */
+}
+
+/* Estilos para o layout dos campos de imagem e categoria */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    /* Adiciona espaço entre os campos */
+}
+
+.input-group label {
+    margin-right: 10px;
+    width: 100px;
+    /* Define a largura fixa para os rótulos */
+}
+
+.input-group input[type="file"],
+.input-group select,
+.input-group input[type="date"],
+.input-group input[type="text"] {
+    flex: 1;
+}
+
+.container form input[type="text"],
+.container form select,
+.container form input[type="date"],
+.container form input[type="file"] {
+    width: calc(100% - 12px);
+    /* Largura do input - 12px para a margem */
+    margin-bottom: 10px;
+    /* Espaçamento entre os campos */
+}
+
+/* Estilo para ajustar o tamanho do campo de seleção de categoria */
+select#categoria {
+    width: 200px;
+    /* Defina o tamanho desejado aqui */
+}
+ /* Estilos para ajustar o layout do formulário */
+ .container form input[type="text"],
+ .container form select,
+ .container form input[type="date"],
+ .container form input[type="file"] {
+     width: calc(100% - 12px); /* Largura do input - 12px para a margem */
+     margin-bottom: 10px; /* Espaçamento entre os campos */
+ }
+
+ .container form button {
+     margin-top: 10px; /* Espaçamento entre o último campo e o botão */
+ }
+
+ /* Estilo para o alerta */
+ .alert {
+     background-color: #C8E6C9; /* Verde */
+     color: #388E3C; /* Cor do texto */
+     padding: 20px;
+     border-radius: 5px;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 1000;
+ }
+ 

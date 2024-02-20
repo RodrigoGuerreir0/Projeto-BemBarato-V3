@@ -1,0 +1,396 @@
+body {
+  justify-content: center;
+  display: flex;
+  height: 98vh;
+  border-radius: 50px;
+  margin: 0;
+}
+
+.main {
+  border: 1px transparent solid;
+  background-color: #2196f3;
+  border-radius: 50px;
+  width: 98%;
+  height: 980px;
+  margin: 0;
+  margin-top: 1%;
+  justify-content: center;
+}
+
+.name {
+  font-size: 80px;
+  color: #1565c0;
+}
+
+.adicionaiscaixa {
+  border: 1px transparent solid;
+  width: 100%;
+  height: 180px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.div1 {
+  border: 1px transparent solid;
+  width: 100%;
+  height: 180px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.div2 {
+  border: 1px transparent solid;
+  width: 20%;
+  height: 180px;
+}
+
+.divisoria {
+  display: flex;
+  border: 1px transparent solid;
+  width: 100%;
+  height: 870;
+}
+
+.caixa {
+  border: 1px transparent solid;
+  width: 100%;
+  height: 800px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.Caixa{
+    display: flex;
+    gap: 15px;
+}
+
+.atalhos {
+  border: 1px transparent solid;
+  width: 20%;
+  height: 800px;
+}
+
+.fundocaixa {
+  background-color: #fff;
+  border-radius: 25px;
+  width: 95%;
+  height: 750px;
+  display: flex;
+}
+
+.legend {
+  color: black;
+  font-size: 20px;
+}
+
+.CodVenda {
+  border: 3px #1565c0 solid;
+  background-color: #fff;
+  border-radius: 25px;
+  width: 10%;
+  height: 100px;
+  margin: auto;
+  margin-left: 2%;
+}
+
+.CodVenda {
+  border: 3px #1565c0 solid;
+  background-color: #fff;
+  border-radius: 25px;
+  width: 80%;
+  height: 100px;
+  margin: auto;
+  margin-left: 2%;
+}
+
+.ValorUnidade {
+  border: 3px #1565c0 solid;
+  background-color: #fff;
+  border-radius: 25px;
+  width: 80%;
+  height: 100px;
+  margin: auto;
+  margin-left: 2%;
+}
+
+.ValorQuantidade {
+  border: 3px #1565c0 solid;
+  background-color: #fff;
+  border-radius: 25px;
+  width: 80%;
+  height: 100px;
+  margin: auto;
+  margin-left: 2%;
+}
+
+.CodProduto {
+  border: 3px #1565c0 solid;
+  background-color: #fff;
+  border-radius: 25px;
+  width: 80%;
+  height: 100px;
+  margin-left: 2%;
+  margin-top: 60px;
+}
+
+.Atalhos {
+  border: 3px #1565c0 solid;
+  background-color: #fff;
+  border-radius: 25px;
+  width: 80%;
+  height: 400px;
+  margin: auto;
+  margin-left: 2%;
+}
+
+.divisoriacaixa1 {
+  border: 1px transparent solid;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.Logo-Produtos {
+  border: 3px #1565c0 solid;
+  background-color: #fff;
+  border-radius: 25px;
+  width: 90%;
+  height: 350px;
+  margin: auto;
+  margin-left: 2%;
+}
+
+.ValorCompra {
+  border: 3px #1565c0 solid;
+  background-color: #fff;
+  border-radius: 25px;
+  width: 90%;
+  height: 90px;
+  margin: auto;
+  margin-left: 2%;
+  margin-top: 10px;
+}
+
+.CodBarra {
+  border: 3px #1565c0 solid;
+  background-color: #fff;
+  border-radius: 25px;
+  width: 90%;
+  height: 100px;
+  margin: auto;
+  margin-left: 2%;
+  margin-top: 10px;
+}
+
+.btn {
+  border: 3px #1565c0 solid;
+  background-color: #fff;
+  border-radius: 25px;
+  border-color: #1565c0;
+  width: 95%;
+  height: 100px;
+  margin-left: 3%;
+  margin-top: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #2196f3;
+}
+
+.Caixa {
+  border: 3px #1565c0 solid;
+  background-color: #fff;
+  border-radius: 25px;
+  width: 1150px;
+  height: 700px;
+  margin: auto;
+  margin-left: 2%;
+  margin-top: 20px;
+}
+
+.NumeroDeProdutos {
+  border: 1px transparent solid;
+  width: 40px;
+  height: 67vh;
+  flex-direction: column-reverse;
+  overflow-y: hidden;
+  text-align: center;
+}
+
+.NumeroDeProdutos-title__main {
+  border: 1px transparent solid;
+  width: 40;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+}
+
+.NumeroDeProdutos-title {
+  font-size: 30px;
+}
+
+.numerosDaLista {
+  width: 40px;
+  height: 30px;
+  justify-content: left;
+  align-items: center;
+}
+
+.numeros {
+    margin: 0;
+    padding: 5px;
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.NomeDoProduto{
+    border: 1px transparent solid;
+    width: 200px;
+    height: 67vh;
+    flex-direction: column-reverse;
+    overflow-y: hidden;
+    text-align: center;
+}
+
+.NomeDoProduto-title__main{
+    border: 1px transparent solid;
+    width: 40;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+.NomeDoProduto-title{
+    font-size: 20px;
+
+}
+
+.NomeDoProdutos-Id{
+    margin: 0;
+    padding: 5px;
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.DescricaoDoProduto{
+  border: 1px transparent solid;
+  width: 55vh;
+  height: 67vh;
+  flex-direction: column-reverse;
+  overflow-y: hidden;
+}
+
+.DescricaoDoProduto-title__main{
+  border: 1px transparent solid;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+}
+
+.DescricaoDoProduto-title{
+  font-size: 20px;
+}
+
+.DescricaoDoProdutos-Id{
+  margin: 0;
+  padding: 5px;
+  width: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.QuantidadeDoProduto{
+  border: 1px transparent solid;
+  width: 12vh;
+  height: 67vh;
+  flex-direction: column-reverse;
+  overflow-y: hidden;
+  text-align: center;
+}
+
+.QuantidadeDoProduto-title__main{
+  border: 1px transparent solid;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+}
+
+.QuantidadeDoProduto-title{
+  font-size: 20px;
+}
+
+.QuantidadeDoProduto-Id{
+  margin: 0;
+  padding: 5px;
+  width: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.ValorDoProduto{
+  border: 1px transparent solid;
+  width: 12vh;
+  height: 67vh;
+  flex-direction: column-reverse;
+  overflow-y: hidden;
+  text-align: center;
+}
+
+.ValorDoProduto-title__main{
+  border: 1px transparent solid;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+}
+
+.ValorDoProduto-title{
+  font-size: 20px;
+}
+
+.ValorDoProduto-Id{
+  margin: 0;
+  padding: 5px;
+  width: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.txtinfoscaixa{
+  font-size: 20px;
+}
+
+.centralizarqtdgeral-main{
+  border: 1px transparent solid;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7vh;
+}
+
+.centralizarqtdgeral{
+  font-size: 50px;
+}
