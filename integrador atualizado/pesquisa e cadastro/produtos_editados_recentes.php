@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Produtos Alterados Recentemente</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            height: auto;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             margin-top: 0;
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #fff;
         }
 
         .container {
-            width: 800px; /* largura do contêiner */
+            width: 800px;
         }
 
         .produto-table {
@@ -32,11 +42,13 @@
         }
 
         .produto-table th {
-            background-color: #f2f2f2;
+            background-color: #2196f3;
+            color: #fff;
         }
 
         .produto-table tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #1565c0;
+            color: #fff;
         }
 
         .produto-table tr:hover {
@@ -48,17 +60,50 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        @media only screen and (max-width: 800px) {
+            .container {
+                width: 90%;
+            }
+
+            .produto-table th,
+            .produto-table td {
+                padding: 4px;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+
+            .produto-table th,
+            .produto-table td {
+                padding: 4px;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            .container {
+                width: 90%;
+            }
+
+            .produto-table th,
+            .produto-table td {
+                padding: 4px;
+            }
         }
     </style>
 </head>
+
 <body>
     <?php
     try {
-        // Conecta ao banco de dados
         include 'banco.php';
 
-        // Consulta o banco de dados para obter os produtos alterados recentemente
-        $stmt = $conn->prepare("SELECT * FROM tb_produtos ORDER BY data_modificacao DESC LIMIT 10"); // Limitando a 10 produtos alterados recentemente
+        $stmt = $conn->prepare("SELECT * FROM tb_produtos ORDER BY data_modificacao DESC LIMIT 10");
         $stmt->execute();
 
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -71,7 +116,6 @@
                 echo "<table class='produto-table'>";
                 echo "<tr><th>Nome</th><td>" . $produto["nome"] . "</td></tr>";
                 echo "<tr><th>Última Modificação</th><td>" . $produto["data_modificacao"] . "</td></tr>";
-                // Adicione aqui outras informações do produto que deseja exibir
                 echo "</table>";
                 echo "</div>";
             }
@@ -79,9 +123,10 @@
         } else {
             echo "Nenhum produto foi alterado recentemente.";
         }
-    } catch(PDOException $e) {
+    } catch (PDOException $e) {
         echo "Erro na conexão com o banco de dados: " . $e->getMessage();
     }
     ?>
 </body>
+
 </html>

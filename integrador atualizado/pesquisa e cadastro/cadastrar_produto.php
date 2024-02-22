@@ -16,12 +16,87 @@
         select#categoria {
             width: 200px;
         }
+
+        body {
+            background-color: #2196f3;
+            color: #fff;
+        }
+
+        .container {
+            background-color: #1565c0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .container form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .container form input[type="text"],
+        .container form select,
+        .container form input[type="date"],
+        .container form input[type="file"] {
+            width: calc(100% - 12px);
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .container form button {
+            background-color: #fff;
+            color: #1565c0;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .container form button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .alerta {
+            background-color: #fff;
+            color: #1565c0;
+            padding: 20px;
+            border-radius: 5px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
+        .alertaSucesso {
+            background-color: #C8E6C9;
+            color: #388E3C;
+        }
+
+        .alertaDuplicado {
+            background-color: #FFEBEE;
+            color: #D32F2F;
+        }
+
+        .Title{
+            color: #fff;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h2>Cadastrar Novo Produto</h2>
+        <h2 class="Title">Cadastrar Novo Produto</h2>
         <form id="cadastroForm" method="post" action="recebe-ProdutoCadastrado.php">
             <label for="codigo_barras">Código de Barras:</label>
             <input type="text" id="codigo_barras" name="codigo_barras" required><br>
@@ -63,43 +138,41 @@
         </form>
     </div>
 
-    <div id="alertaSucesso" class="alerta" style="display: none; background-color: #C8E6C9; color: #388E3C; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; padding: 20px; border-radius: 5px;">
+    <div id="alertaSucesso" class="alerta alertaSucesso" style="display: none;">
         Produto cadastrado com sucesso!
     </div>
 
-    <div id="alertaDuplicado" class="alerta" style="display: none; background-color: #FFEBEE; color: #D32F2F; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; padding: 20px; border-radius: 5px;">
+    <div id="alertaDuplicado" class="alerta alertaDuplicado" style="display: none;">
         O código de barras inserido já está em uso para outro produto.
     </div>
 
     <script>
-
         function exibirAlertaSucesso() {
             var alerta = document.getElementById("alertaSucesso");
             alerta.style.display = 'block';
-            setTimeout(function() {
+            setTimeout(function () {
                 alerta.style.display = 'none';
-            }, 3000); 
+            }, 3000);
         }
 
-     
         function exibirAlertaDuplicado() {
             var alerta = document.getElementById("alertaDuplicado");
             alerta.style.display = 'block';
-            setTimeout(function() {
+            setTimeout(function () {
                 alerta.style.display = 'none';
-            }, 3000); 
+            }, 3000);
         }
     </script>
 
     <script>
-        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+        document.getElementById('cadastroForm').addEventListener('submit', function (event) {
             event.preventDefault();
 
             var formData = new FormData(this);
 
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'recebe-ProdutoCadastrado.php', true);
-            xhr.onload = function() {
+            xhr.onload = function () {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     var response = JSON.parse(xhr.responseText);
                     if (response.error === "Código de barras duplicado") {

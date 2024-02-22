@@ -4,37 +4,61 @@
     <link rel="stylesheet" href="style.css">
     <title>Editar Produto</title>
     <style>
-        /* Estilos para ajustar o layout do formulário */
-        .container form input[type="text"],
-        .container form select,
-        .container form input[type="date"],
-        .container form input[type="file"] {
-            width: calc(100% - 12px); /* Largura do input - 12px para a margem */
-            margin-bottom: 10px; /* Espaçamento entre os campos */
-        }
+       body {
+  background-color: #1565c0; /* Cor de fundo azul */
+  color: #fff; /* Cor do texto branco */
+}
 
-        .container form button {
-            margin-top: 10px; /* Espaçamento entre o último campo e o botão */
-        }
+.container {
+  background-color: #2196f3; /* Cor de fundo azul claro */
+  color: #fff; /* Cor do texto branco */
+  padding: 20px;
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
 
-        /* Estilo para o alerta */
-        .alert {
-            background-color: #C8E6C9; /* Verde */
-            color: #388E3C; /* Cor do texto */
-            padding: 20px;
-            border-radius: 5px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-        }
+.container h2 {
+  margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+.container form input[type="text"],
+.container form select,
+.container form input[type="date"],
+.container form input[type="file"] {
+  width: calc(100% - 12px); /* Largura do input - 12px para a margem */
+  margin-bottom: 10px; /* Espaçamento entre os campos */
+}
+
+.container form button {
+  margin-top: 10px; /* Espaçamento entre o último campo e o botão */
+}
+
+/* Estilo para o alerta */
+.alert {
+  background-color: #C8E6C9; /* Verde */
+  color: #388E3C; /* Cor do texto */
+  padding: 20px;
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.Title{
+    color: #fff;
+}
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Editar Produto</h2>
+        <h2 class="Title">Editar Produto</h2>
         <?php
         session_start(); // Inicia a sessão
 

@@ -5,10 +5,53 @@
     <title>Editar e Cadastrar Produto</title>
   
 </head>
+<style>
+    body {
+    background-color: #1565c0;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: #2196f3;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.button {
+    background-color: #fff;
+    color: #2196f3;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1565c0;
+    color: #fff;
+}
+
+.alert {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Title{
+    color: #fff;
+}
+
+</style>
 <body>
 
     <div class="container">
-        <h2>Editar e Cadastrar Produto</h2>
+        <h2 class="Title">Editar e Cadastrar Produto</h2>
 
         <?php
         session_start(); // Inicia a sessão
@@ -23,7 +66,7 @@
         ?>
 
         <form action="editar_produto.php" method="post">
-            <label for="codigo_barras">Código de Barras:</label><br>
+            <label for="codigo_barras">Código de Barras:</label><br><br>
             <input type="text" id="codigo_barras" name="codigo_barras" required><br><br>
             <input class="button" type="submit" value="Editar">        
         </form>
