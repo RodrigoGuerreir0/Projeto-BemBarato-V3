@@ -14,6 +14,7 @@ $codVenda = CodigoCaixa();
 $somaValores = SomarValores();
 $descontoCompra = CalcularDesconto();
 $dados = ConsultarCaixa();
+
 ?>
 <?php foreach ($dados as $linha) { ?>
     <tr>
@@ -58,7 +59,7 @@ $dados = ConsultarCaixa();
         </div>
         <div>
             <div class="divisoria">
-                <div class="caixa">
+                <div class="caixa1">
                     <div class="fundocaixa">
                         <div class="divisoriacaixa1">
                             <div>
@@ -143,7 +144,7 @@ $dados = ConsultarCaixa();
                                     </div>
                                     <?php foreach ($dados as $linha) { ?>
                                         <tr>
-                                            <p class="txtinfoscaixa"><?php echo "R$ " . $linha["valor"] ?></p>
+                                            <p class="txtinfoscaixa"><?php echo "R$ " . $linha["valor"]?></p>
                                             <?php $ultimoValor = $linha["valor"] ?>
 
                                         </tr>

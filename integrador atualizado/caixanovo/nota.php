@@ -5,10 +5,8 @@ $somaValores = SomarValores();
 $descontoCompra = CalcularDesconto();
 $dados = ConsultarCaixa();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$metodo_pagamento = $_POST["metodo_pagamento"];
 
-    $metodo_pagamento = $_POST["metodo_pagamento"];
-}
 
 $localEmpresa = "Cidade Exemplo, Estado Exemplo";
 $tipoPagamento = $metodo_pagamento;
@@ -18,6 +16,7 @@ $descricao = $dados;
 function gerarNotaFiscalHTML($localEmpresa, $tipoPagamento, $dataHora, $soma, $descricao)
 {
     $html = "<!DOCTYPE html>
+
             <html lang='pt-br'>
             <head>
                 <meta charset='UTF-8'>
@@ -37,7 +36,7 @@ function gerarNotaFiscalHTML($localEmpresa, $tipoPagamento, $dataHora, $soma, $d
                     .nota-fiscal {
                         border: 1px solid #000;
                         padding: 20px;
-                        width: 450px;
+                        width: 650px;
                         background-color: bisque;
                         text-align: left;
                         margin: 50px auto;
@@ -70,12 +69,12 @@ function gerarNotaFiscalHTML($localEmpresa, $tipoPagamento, $dataHora, $soma, $d
 
                     .Cnome{
                         border: 1px transparent solid;
-                        width: 35vh;
+                        width: 15vh;
 
                     }
                     .Cdescricao{
                         border: 1px transparent solid;
-                        width: 40vh;
+                        width: 30vh;
                         font-size: 15px;
                     }
                     .Cestoque{
@@ -84,7 +83,7 @@ function gerarNotaFiscalHTML($localEmpresa, $tipoPagamento, $dataHora, $soma, $d
                     }
                     .Cvalor{
                         border: 1px transparent solid;
-                        width: 20vh;
+                        width: 8vh;
 
                     }
                 </style>
@@ -100,14 +99,13 @@ function gerarNotaFiscalHTML($localEmpresa, $tipoPagamento, $dataHora, $soma, $d
                     <p>Produtos:</p>";
 
     
-    foreach ($descricao as $produto){
-        $html .= "<p class='Campos'>
-        <span class='Cnome'>{$produto['nome']}</span> 
-        <span class='Cdescricao'>{$produto['descricao']}</span>
-        <span class='Cestoque'> {$produto['estoque']}x </span>
-        <span class='Cvalor'> R$ {$produto['valor']} </span></p>";
-    }
-   
+                    foreach ($descricao as $produto){
+                        $html .= "<div class='Campos'>"
+                        . "<p class='Campos'><span class='Cnome'>{$produto['nome']}</span></p>"
+                        . "<p class='Campos'><span class='Cdescricao'>{$produto['descricao']}</span></p>"
+                        . "<p class='Campos'><span class='Cestoque'>{$produto['Quantidade']}x</span></p>"
+                        . "<p class='Campos'><span class='Cvalor'>R$ ".$produto["valor"]."</span></p></div>";
+                    }
 
     $html .= "<p>------------------------------------------------------------------------------------</p>
                 <p class='centerValor'><b>Valor Compra: R$ {$soma}</b></p>

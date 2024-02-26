@@ -41,9 +41,9 @@ function abrirModal() {
     container.innerHTML = `
         <h2>Nova Compra</h2>
         <p>Deseja iniciar uma nova compra?</p>
-        <form method="post" action="processar_compra.php">
+        <form id="modalForm" method="post" action="validarcaixa.php">
             <button class="button" type="submit" name="acao" value="confirmar">Sim</button>
-            <button class="button" type="submit" name="acao" value="cancelar">Não</button>
+            <button class="button" type="button" name="acao" value="cancelar">Não</button>
         </form>
     `;
 

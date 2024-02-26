@@ -52,7 +52,7 @@ function SomarValores()
 
         if ($resultados->rowCount() > 0) {
             foreach ($resultados as $row) {
-                $soma += $row['valor'];
+                $soma += $row['valor']*$row['Quantidade'];
             }
         }
 
@@ -96,33 +96,11 @@ function CalcularDesconto()
 
 $descontos = CalcularDesconto();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['quantidade'])) {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "caixa";
+function NovaVenda($venda){
+    $conexaos = new PDO("mysql:host=localhost;dbname=bd_bembarato", "root", "");
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        $stmt = $conn->prepare("INSERT INTO produtoscaixa (quantidade) VALUES (?)");
-
-        $stmt->bind_param("i", $quantidade);
-
-        $quantidade = $_POST['quantidade'];
-
-        if ($stmt->execute() === TRUE) {
-            echo "Quantidade inserida com sucesso!";
-        } else {
-            echo "Erro ao inserir quantidade: " . $conn->error;
-        }
-
-        $stmt->close();
-        $conn->close();
-    } else {
-    }
+    $query = "INSERT INTO tb_vendas (hora) VALUES (:hora) ";
+    $stmt = $conexaos->query($query);
+    $stmt->bindParam(':data_venda', $venda);
+    $stmt->execute();
 }
